@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ClinicCall AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Clinic Operations</p>
+          <h1>ClinicCall AI</h1>
+          <p class="subhead">
+            Handle calls, triage urgency, and suggest the next available slots
+            with a calm, mobile-first experience.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#assistant">Start a conversation</a>
+            <a class="btn btn-ghost" href="#voice">Voice setup</a>
+          </div>
+        </div>
+      </header>
+
+      <section id="assistant" class="panel">
+        <div class="panel-head">
+          <h2>Ask the receptionist</h2>
+          <p>Type the request as a patient would on the phone.</p>
+        </div>
+
+        <div class="panel-grid">
+          <div class="card">
+            <form id="chatForm" class="stack">
+              <label class="field">
+                <span>Message</span>
+                <textarea
+                  id="message"
+                  placeholder="I need a cardiology appointment for chest pain"
+                  rows="4"
+                  required
+                ></textarea>
+              </label>
+              <div class="row">
+                <button class="btn btn-primary" type="submit">
+                  Send message
+                </button>
+                <button class="btn btn-ghost" type="button" id="clearBtn">
+                  Clear
+                </button>
+              </div>
+            </form>
+            <div class="reply" id="replyBox">
+              <p class="reply-title">Assistant reply</p>
+              <p class="reply-text" id="replyText">Waiting for input.</p>
+              <div class="reply-meta" id="replyMeta"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="stack">
+              <div class="card-head">
+                <h3>Suggestions</h3>
+                <p>Select a provider, then a time, and confirm with the assistant.</p>
+              </div>
+              <div id="providersList" class="provider-list"></div>
+              <div id="slotsList" class="slot-list"></div>
+              <p class="fineprint" id="bookingStatus">
+                Select a provider in chat, then pick a slot number to confirm.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card voice-card">
+          <div class="card-head">
+            <h3>Voice (in progress)</h3>
+            <p>
+              We’re actively testing voice calling. For now, the demo focuses on
+              the chat receptionist.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="voice" class="panel alt">
+        <div class="panel-head">
+          <h2>Voice call setup</h2>
+          <p>
+            Voice is temporarily disabled while we tune quality and latency.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Status</h3>
+          <p class="fineprint">
+            Voice calling is coming soon. We’ll re-enable this once the speech
+            pipeline is stable.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
